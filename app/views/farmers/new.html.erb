@@ -1,0 +1,46 @@
+<%= form_with scope: :farmers, url: farmer_path, local: true do |form| %>
+
+	<p>
+    <%= form.select(:farmer_id, @farmer_list, :prompt => 'Select Farmer' ) %>
+	</p>
+	
+
+	<p>
+    <%= form.select(:instrument_id, @instrument_list, :prompt => 'Select Instrument' ) %>
+	</p>
+
+	
+
+	
+	<p>
+    <%= form.label :Rent_per_Hour %><br>
+    <%= form.text_field :rent_per_hour %>
+	</p>
+	
+  <p>
+    <%= form.label :AVailability_Status %><br>
+    <%= form.text_field :is_available %>
+  </p>
+ 
+  <p>
+    <%= form.label :Deposit %><br>
+    <%= form.text_field :deposit %>
+	</p>
+	
+
+
+  <p>
+		<%= form.label :Available_Till %><br>
+		<%= datetime_select(:farmer_instruments, "available_till")%>
+    
+	</p>
+	
+
+
+  <p>
+    <%= form.label :Next_Available_At %><br>
+		<%= datetime_select(:farmer_instruments, "next_available_at" )%>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

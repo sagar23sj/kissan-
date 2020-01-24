@@ -1,0 +1,27 @@
+<html>
+<head> <link rel="stylesheet" type="text/css" href="index.css"> </head>
+<h1><span class="yellow">List of Farmer Instruments</pan></h1>
+<centre><%= link_to 'Create New Instrument ', new_instrument_path %>
+<table class="container">
+	<thead>
+		<tr>
+			<th> Instrument_Name </th>
+			<th> Brand </th>
+			<th> Specification </th>
+			<th> View Details </th>
+			<th> Edit Details </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @instrument_list.each do |inst_list| %>
+	<tr>
+		<td><%= inst_list.name %></td>
+		<td><%= inst_list.brand %></td>
+		<td><%= inst_list.specification %></td>
+		<td><%= link_to 'View', instrument_path(inst_list.id) %></td>
+		<td><%= link_to 'Edit', edit_instrument_path(inst_list.id) %></td>
+	</tr>
+<% end %>
+	</tbody>
+</table>
+</html>

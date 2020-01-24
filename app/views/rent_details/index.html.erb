@@ -1,0 +1,13 @@
+<h1 style="color: red;font-family: 'IM Fell Great Primer SC', serif; text-align: center;">Rent Details</h1>
+
+
+<% @farmers.each do |farmers| %>
+	<ul><p>
+	<b>	<%= farmers.first_name+ " " +farmers.last_name %></b>
+		Owns 
+		<b><%= farmers.farmer_instruments.count %></b>
+     Instruments and Rents
+		 <b><%= farmers.rents.count %> </b>Instruments
+
+	</p></ul>
+<% end %>

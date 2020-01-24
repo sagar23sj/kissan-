@@ -1,0 +1,37 @@
+
+
+
+
+
+
+<html>
+<head> <link rel="stylesheet" type="text/css" href="index.css"> </head>
+<h1><span class="yellow">Details</pan></h1>
+
+<table class="container">
+	<thead>
+		<tr>
+			<th> Farmer_name </th>
+			<th> Instrument_Name </th>
+			<th> Rent Per Hour </th>
+			<th> Availablility Status </th>
+			<th> Deposit Amount </th>
+			<th> Available Till </th>
+			<th> Next Available At </th>
+		</tr>
+	</thead>
+	<tbody>
+
+	<tr>
+	<td><%= @farmer_details.farmer.first_name+ " " +@farmer_details.farmer.last_name %></th>
+	<td><%= @farmer_details.instrument.name %></th>
+	<td><%= @farmer_details.rent_per_hour %></th>
+	<td><%= @farmer_details.is_available %></th>
+	<td><%= @farmer_details.deposit %></th>
+	<td><%= @farmer_details.available_till %></th>
+	<td><%= @farmer_details.next_available_at %></th>
+	</tr>
+
+	</tbody>
+</table>
+</html>

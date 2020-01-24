@@ -1,0 +1,35 @@
+<html>
+
+<h1><span class="yellow">List of Farmer Instruments</pan></h1>
+<centre><%= link_to 'Create New Advertisement ', new_farmer_instrument_path %>
+<table class="container">
+	<thead>
+		<tr>
+			<th> Farmer_name </th>
+			<th> Instrument_Name </th>
+			<th> Rent Per Hour </th>
+			<th> Availablility Status </th>
+			<th> Deposit Amount </th>
+			<th> Available Till </th>
+			<th> Next Available At </th>
+			<th> View Details </th>
+			<th> Edit Details </th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @farmer_instruments.each do |fi| %>
+	<tr>
+		<td><%= fi.farmer.first_name+ " " +fi.farmer.last_name %></td>
+		<td><%= fi.instrument.name %></td>
+		<td><%= fi.rent_per_hour %></td>
+		<td><%= fi.is_available %></td>
+		<td><%= fi.deposit %></td>
+		<td><%= fi.available_till %></td>
+		<td><%= fi.next_available_at %></td>
+		<td><%= link_to 'View', farmer_instrument_path(fi.id) %></td>
+		<td><%= link_to 'Edit', edit_farmer_instrument_path(fi.id) %></td>
+	</tr>
+<% end %>
+	</tbody>
+</table>
+</html>

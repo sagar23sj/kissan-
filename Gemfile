@@ -6,7 +6,7 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -15,7 +15,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'mini_racer', platforms: :ruby
-
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'hirb'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -29,6 +31,19 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+
+gem 'rspec_api_documentation'
+
+group :development, :test do
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'factory_bot'
+  gem 'database_cleaner'
+  gem 'sqlite3'
+end
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -51,11 +66,17 @@ group :development do
 end
 
 group :test do
+
+  gem 'simplecov' 
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  git 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

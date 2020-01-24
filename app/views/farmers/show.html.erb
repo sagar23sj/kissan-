@@ -1,0 +1,43 @@
+
+
+
+
+
+
+<html>
+<head> <link rel="stylesheet" type="text/css" href="index.css"> </head>
+<h1><span class="yellow">Details</pan></h1>
+
+<table class="container">
+	<thead>
+		<tr>
+			<th> First Name </th>
+			<th> Last Name </th>
+			<th> Mobile Number</th>
+			<th> E-mail ID </th>
+			<th> Address Line_1</th>
+			<th> Address Line_2 </th>
+			<th> City </th>
+			<th> State </th>
+			<th> Pincode </th>
+			<th> Country </th>
+		</tr>
+	</thead>
+	<tbody>
+
+	<tr>
+	<td><%= @farmer_details.first_name %></th>
+	<td><%= @farmer_details.last_name %></th>
+	<td><%= @farmer_details.mobile_number %></th>
+	<td><%= @farmer_details.email_id %></th>
+	<td><%= @farmer_details.address.line1 %></th>
+	<td><%= @farmer_details.address.line2 %></th>
+	<td><%= @farmer_details.address.city %></th>
+	<td><%= @farmer_details.address.state %></th>
+	<td><%= @farmer_details.address.pincode %></th>
+	<td><%= @farmer_details.address.country %></th>
+	</tr>
+
+	</tbody>
+</table>
+</html>
